@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkslategrey;
+}
+.header{
+    padding: 10px;
+    text-align: center;
+    background-color: darkslateblue;
+    height: 65px;
+    margin-bottom: 10px;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.btn{
+    background-color: darkseagreen;
+    padding: 15px 30px;
+    border: 1px solid black;
+}
+
+
+
+.seccion-puzzle{
+    display: flex;
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+}
+
+.izquierda{
+    margin-left: 10%;
+    float: left;
+}
+
+.derecha{
+    margin-right: 10%;
+    float: right;
+}
+
+
+.puzzle{
+    width: 132px;
+    height: 190px;
+    background-size: cover;
+}
+
+.puzzle-ver{
+    width: 132px;
+    height: 190px;
+    background-size: cover;
+    
+}
+
+.br-bl{
+    border: 1px solid black;
+}
+
+.br-wh{
+    border: 1px solid white;
+}
+
+#puz-uno{
+    background-image: url(puzle/puz-1.png);
+}
+#puz-dos{
+    background-image: url(puzle/puz-2.png);
+}
+#puz-tres{
+    background-image: url(puzle/puz-3.png);
+}
+#puz-cuatro{
+    background-image: url(puzle/puz-4.png);
+}
+#puz-cinco{
+    background-image: url(puzle/puz-5.png);
+}
+#puz-seis{
+    background-image: url(puzle/puz-6.png);
+}
+#puz-siete{
+    background-image: url(puzle/puz-7.png);
+}
+#puz-ocho{
+    background-image: url(puzle/puz-8.png);
+}
+#puz-nueve{
+    background-image: url(puzle/puz-9.png);
+}
