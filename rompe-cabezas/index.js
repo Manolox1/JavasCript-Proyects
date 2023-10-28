@@ -4,21 +4,28 @@ const ver = document.querySelectorAll(".ver")
 const btn_ini = document.getElementById("iniciar")
 const puzzle_whi=document.querySelectorAll(".br-bl")
 
+//Variables para la seccion de movimientos de piezas
+const puzzle = document.querySelectorAll(".puzzle")
+const secciones_puz = document.querySelectorAll(".seccion-puzzle")
+
 //variables globales que se van a usar
 let id_palabra = ["uno", "cuatro", "siete", "dos", "cinco","ocho","tres","seis","nueve"]
 let imagenes = []
+let finalizacion = 9
+
+
 
 //boton de incio para actualizar el lugar de las piezas
 btn_ini.addEventListener("click",()=>{
-
+    finalizacion=9
     cargaImagenes()
 
     let devuelta = []
     puzzle_whi.forEach(pieza=>{
-        pieza.id = id_palabra[i]
+        pieza.id = id_palabra[0]
         devuelta.push(pieza.id)
         id_palabra.shift()
-        console.log("pieza.id: "+pieza.id)
+        //console.log("pieza.id: "+pieza.id)
     })
     id_palabra=[...devuelta]
 
@@ -36,7 +43,7 @@ function cargaImagenes() {
     ver.forEach(ver =>{
         ver.id = imagenes[i]
         imagenes.shift()
-        console.log("el id es: "+ver.id)
+        //console.log("el id es: "+ver.id)
     })
 }
 
@@ -77,34 +84,42 @@ function verificar(array, numero) {
     return existe
 }
 
-//Aca empiezo con las funciones de movidas de las piezas
-const puzzle = document.querySelectorAll(".puzzle")
-const secciones_puz = document.querySelectorAll(".seccion-puzzle")
 
+//Movimientos de piezas
 puzzle.forEach(puzzle =>{
-    let verdadero=0
+
     puzzle.addEventListener("dragstart", event=>{
-        console.log("Estoy moviendo la pieza: "+puzzle.id)
+        //console.log("Estoy moviendo la pieza: "+puzzle.id)
         event.dataTransfer.setData("id", puzzle.id)
     })
 
     puzzle.addEventListener("dragover", event=>{
         event.preventDefault()
     })
-
+    
     puzzle.addEventListener("drop", event=>{
-        console.log("Drop "+ puzzle.id)
+        //console.log("Drop "+ puzzle.id)
         const puzzle_id = event.dataTransfer.getData("id")
-        console.log(puzzle_id)
+        //console.log(puzzle_id)
         //puzzle.id = puzzle_id
         const puz_id = "puz-"+puzzle.id
         if (puz_id===puzzle_id) {
             puzzle.id = puzzle_id
-            verdadero=1
+            finalizacion=finalizacion-1
+            //console.log("piezas para f:"+finalizacion)
         }
+
+        if(finalizacion==0){
+            setTimeout(terminaste, 1000)
+        }
+        
         
     })
 })
+
+function terminaste(){
+    alert("Felicidades terminaste el puzzle")
+}
 
 secciones_puz.forEach(seccion=>{
     seccion.addEventListener("dragover", event=>{
