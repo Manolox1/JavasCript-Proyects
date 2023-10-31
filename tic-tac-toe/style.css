@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.conteiner{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.row{
+    border: 1px solid green;
+}
+
+.rows{
+    border: 1px solid red;
+}
+
+.rowd{
+    border: 1px solid violet;
+}
+
+.space{
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+}
+
+.default{
+    background-color: gray;
+}
+
+.x{
+    background-color: red;
+}
+
+.o{
+    background-color: blue;
+}
+
+.module-second{
+    margin: 20px;
+    display: none;
+    position: absolute;
+    right: 43%;
+    background-color: aqua;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.module{
+    margin-top: 20px;
+    position: absolute;
+    right: 46.1%;
+    background-color: aqua;
+    text-align: center;
+    padding: 20px 30px; 
+}
+
+.eleccion{
+    display: flex;
+    flex-direction: row;
+}
+
+.player{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 5px;
+    background-color: coral;
+}
